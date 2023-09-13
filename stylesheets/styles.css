@@ -46,3 +46,13 @@ body {
   max-width: 600px;
   margin-top: 0;
 }
+.main__translation .translation__para--heading {
+  display: none;
+  text-decoration: underline;
+}
+.main__translation .translation__para--heading--show {
+  display: flex;
+}
+.main__translation .translation__para .translation__text--morse-code {
+  font-size: 28px;
+}

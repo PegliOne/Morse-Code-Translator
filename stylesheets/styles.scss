@@ -52,5 +52,20 @@ body {
   .translation__para {
     max-width: 600px;
     margin-top: 0;
+
+    &--heading {
+      display: none;
+      text-decoration: underline;
+
+      &--show {
+        display: flex;
+      }
+    }
+
+    .translation__text {
+      &--morse-code {
+        font-size: 28px;
+      }
+    }
   }
 }
