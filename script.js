@@ -24,8 +24,6 @@ translationTextArea.addEventListener("change", (event) => {
 translationForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // Replace with automatic language detection
-
   const { contentToTranslate, targetLanguage } = getTranslationData(
     event,
     translationTextArea

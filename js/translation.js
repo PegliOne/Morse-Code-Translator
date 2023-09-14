@@ -8,8 +8,6 @@ export const translate = (contentToTranslate, targetLanguage) => {
   }
 };
 
-// Convert into one function
-
 const translateToMorseCode = (contentToTranslate) => {
   const letters = contentToTranslate.toUpperCase().split("");
   const translationObject = lettersToMorse();
@@ -21,5 +19,10 @@ const translateToEnglish = (contentToTranslate) => {
   const letters = contentToTranslate.split(" ");
   const translationObject = morseToLetters();
   const englishLetters = letters.map((letter) => translationObject[letter]);
-  return englishLetters.join("");
+  return formatEnglishText(englishLetters);
 };
+
+const formatEnglishText = (letters) => {
+  // Capitalises the first letter and lowercases the rest
+  return letters[0].toUpperCase() + letters.slice(1).join("").toLowerCase();     
+}
