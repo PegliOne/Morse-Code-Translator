@@ -21,6 +21,7 @@ export const lettersToMorse = () => {
     S: "...",
     T: "-",
     U: "..-",
+    V: "...-",
     W: ".--",
     X: "-..-",
     Y: "-.--",
@@ -29,7 +30,7 @@ export const lettersToMorse = () => {
   };
 };
 
-// Programmatically create this
+// Programmatically create this. Also lowercase the letters and only capitalise the first one.
 
 export const morseToLetters = () => {
   return {
@@ -54,6 +55,7 @@ export const morseToLetters = () => {
     "...": "S",
     "-": "T",
     "..-": "U",
+    "...-": "V",
     ".--": "W",
     "-..-": "X",
     "-.--": "Y",
