@@ -1,9 +1,9 @@
 import { lettersToMorse, morseToLetters } from "./reference-data.js";
 
-export const translate = (contentToTranslate, instruction) => {
-  if (instruction === "translateToMorseCode") {
+export const translate = (contentToTranslate, targetLanguage) => {
+  if (targetLanguage === "Morse Code") {
     return translateToMorseCode(contentToTranslate);
-  } else if (instruction === "translateToEnglish") {
+  } else if (targetLanguage === "English") {
     return translateToEnglish(contentToTranslate);
   }
 };
