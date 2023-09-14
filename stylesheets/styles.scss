@@ -1,8 +1,5 @@
-@mixin centred-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@use "./modules/form";
+@use "./modules/translations";
 
 body {
   margin: 0 24px;
@@ -16,56 +13,4 @@ body {
 
 .main__para {
   margin-bottom: 0;
-}
-
-.main__form {
-  @include centred-column;
-
-  .form__label {
-    margin: 12px 0;
-  }
-
-  .form__textarea {
-    width: 100%;
-    max-width: 600px;
-    padding: 8px;
-  }
-
-  .form__buttons {
-    margin-top: 24px;
-
-    .form__button {
-      width: 180px;
-      margin-right: 8px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.main__translation {
-  @include centred-column;
-  margin-top: 60px;
-
-  .translation__para {
-    max-width: 600px;
-    margin-top: 0;
-
-    &--heading {
-      display: none;
-      text-decoration: underline;
-
-      &--show {
-        display: flex;
-      }
-    }
-
-    .translation__text {
-      &--morse-code {
-        font-size: 28px;
-      }
-    }
-  }
 }

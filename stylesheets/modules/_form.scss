@@ -1,0 +1,28 @@
+@use "../partials/mixins";
+
+.main__form {
+  @include mixins.centred-column;
+
+  .form__label {
+    margin: 12px 0;
+  }
+
+  .form__textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px;
+  }
+
+  .form__buttons {
+    margin-top: 24px;
+
+    .form__button {
+      width: 180px;
+      margin-right: 8px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
