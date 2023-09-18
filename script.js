@@ -17,19 +17,18 @@ const translationContainer = document.querySelector("#translationContainer");
 
 // Event Listeners
 
-translationTextArea.addEventListener("change", (event) => {
+translationTextArea.addEventListener("change", () => {
   updateButtonText(translationButton, translationTextArea);
 });
 
 translationForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const { contentToTranslate, targetLanguage } = getTranslationData(
-    event,
-    translationTextArea
-  );
+  const { contentToTranslate, targetLanguage } =
+    getTranslationData(translationTextArea);
 
   const translation = translate(contentToTranslate, targetLanguage);
+
   displayTranslation(
     translation,
     targetLanguage,

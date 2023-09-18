@@ -42,6 +42,10 @@
 .main__translation .translation__para .translation__text--morse-code {
   font-size: 28px;
 }
+.main__translation .translation__para .translation__text--invalid {
+  color: red;
+  font-weight: 500;
+}
 
 body {
   margin: 0 24px;

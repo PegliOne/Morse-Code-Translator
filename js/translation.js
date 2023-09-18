@@ -1,7 +1,11 @@
 import { lettersToMorse, convertTranslationObject } from "./reference-data.js";
 
 export const translate = (contentToTranslate, targetLanguage) => {
+  // Error Handling
   if (!contentToTranslate) return "";
+  if (!targetLanguage) return "Invalid language input";
+
+  // Translation
   const translationObject = lettersToMorse();
   if (targetLanguage === "Morse Code") {
     return translateToMorseCode(contentToTranslate, translationObject);
@@ -31,6 +35,6 @@ const translateToEnglish = (contentToTranslate, translationObject) => {
 };
 
 const formatEnglishText = (letters) => {
-  // Capitalises the first letter and lowercases the rest
+  // Capitalises the first letter and lowercases the rest of the string
   return letters[0].toUpperCase() + letters.slice(1).join("").toLowerCase();
 };

@@ -21,6 +21,11 @@
       &--morse-code {
         font-size: 28px;
       }
+
+      &--invalid {
+        color: red;
+        font-weight: 500;
+      }
     }
   }
 }

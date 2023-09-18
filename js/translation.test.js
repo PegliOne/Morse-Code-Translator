@@ -1,6 +1,6 @@
 import { translate } from "./translation.js";
 
-describe("translate", () => {
+describe("translate with valid inputs", () => {
   const englishInMorseCode = ". -. --. .-.. .. ... ....";
   const withSpacesInMorseCode = ".-- .. - .... / ... .--. .- -.-. . ...";
   const mixedStringInMorseCode = "-- .. -..- . -.. / ... - .-. .. -. --.";
@@ -21,11 +21,15 @@ describe("translate", () => {
     );
     expect(translate(mixedStringInMorseCode, "English")).toBe("Mixed string");
   });
+});
 
+describe("translate with invalid inputs", () => {
   it("handles empty strings", () => {
     expect(translate("", "Morse Code")).toBe("");
     expect(translate("", "English")).toBe("");
   });
 
-  // Write tests for handling strings that are neither Morse Code nor English or test this feature in other function tests
+  it("handles invalid strings", () => {
+    expect(translate("123", null)).toBe("Invalid language input");
+  });
 });

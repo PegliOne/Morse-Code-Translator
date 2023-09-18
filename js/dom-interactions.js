@@ -1,22 +1,21 @@
 export const updateButtonText = (button, textarea) => {
   const contentToTranslate = textarea.value;
-  if (contentToTranslate.length === 0) {
-    button.textContent = "Translate";
-  }
-  const targetLanguage = detectTranslationLanguage(contentToTranslate);
-  button.textContent = `Translate to ${targetLanguage}`;
+  const targetLanguage = detectTargetLanguage(contentToTranslate);
+  button.textContent = targetLanguage
+    ? `Translate to ${targetLanguage}`
+    : "Translate";
 };
 
 export const getTranslationData = (textarea) => {
-  const contentToTranslate = textarea.value;
-  const targetLanguage = detectTranslationLanguage(contentToTranslate);
+  const contentToTranslate = textarea.value.trim();
+  const targetLanguage = detectTargetLanguage(contentToTranslate);
   return { contentToTranslate, targetLanguage };
 };
 
-// Update this to handle neither morse code nor English strings and enters at the start of the content text
-
-const detectTranslationLanguage = (contentToTranslate) => {
-  return /[a-zA-Z]/.test(contentToTranslate) ? "Morse Code" : "English";
+const detectTargetLanguage = (contentToTranslate) => {
+  if (/[a-zA-Z]/.test(contentToTranslate)) return "Morse Code";
+  if (/[.-/]/.test(contentToTranslate)) return "English";
+  return null;
 };
 
 export const displayTranslation = (
@@ -27,14 +26,19 @@ export const displayTranslation = (
 ) => {
   if (!translation) return;
   heading.classList.add("translation__para--heading--show");
-  toggleMorseCodeClass(targetLanguage, container);
+  toggleTranslationClasses(targetLanguage, container);
   container.textContent = translation;
 };
 
-const toggleMorseCodeClass = (targetLanguage, container) => {
+const toggleTranslationClasses = (targetLanguage, container) => {
+  container.classList.remove(
+    "translation__text--morse-code",
+    "translation__text--invalid"
+  );
+  if (!targetLanguage) {
+    container.classList.add("translation__text--invalid");
+  }
   if (targetLanguage === "Morse Code") {
     container.classList.add("translation__text--morse-code");
-  } else if (targetLanguage === "English") {
-    container.classList.remove("translation__text--morse-code");
   }
 };
