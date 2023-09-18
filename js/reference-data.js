@@ -30,10 +30,9 @@ export const lettersToMorse = () => {
   };
 };
 
-export const morseToLetters = () => {
-  const morseLettersObject = lettersToMorse();
+export const convertTranslationObject = (translationObject) => {
   // Creates a new object with the keys and values of the morseLettersObject reversed
-  return Object.entries(morseLettersObject).reduce((newObj, entry) => {
+  return Object.entries(translationObject).reduce((newObj, entry) => {
     newObj[entry[1]] = entry[0];
     return newObj;
   }, {});

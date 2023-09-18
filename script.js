@@ -19,7 +19,7 @@ const translationContainer = document.querySelector("#translationContainer");
 
 translationTextArea.addEventListener("change", (event) => {
   updateButtonText(translationButton, translationTextArea);
-})
+});
 
 translationForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -28,8 +28,6 @@ translationForm.addEventListener("submit", (event) => {
     event,
     translationTextArea
   );
-
-  if (!contentToTranslate) return;
 
   const translation = translate(contentToTranslate, targetLanguage);
   displayTranslation(
