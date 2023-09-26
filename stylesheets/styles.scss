@@ -1,0 +1,16 @@
+@use "./modules/form";
+@use "./modules/translations";
+
+body {
+  margin: 0 24px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.header__heading {
+  text-align: center;
+}
+
+.main__para {
+  margin-bottom: 0;
+}
