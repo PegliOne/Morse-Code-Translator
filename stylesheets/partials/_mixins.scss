@@ -1,5 +1,14 @@
+@use "../partials/palette";
+
 @mixin centred-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@mixin form-colours-and-border {
+  background-color: palette.$secondary-background-colour;
+  color: palette.$primary-text-colour;
+  border: 2px solid palette.$primary-text-colour;
+  border-radius: 8px;
 }

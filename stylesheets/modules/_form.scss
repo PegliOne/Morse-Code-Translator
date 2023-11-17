@@ -1,4 +1,5 @@
 @use "../partials/mixins";
+@use "../partials/palette";
 
 .main__form {
   @include mixins.centred-column;
@@ -11,6 +12,7 @@
     width: 100%;
     max-width: 600px;
     padding: 8px;
+    @include mixins.form-colours-and-border;
   }
 
   .form__buttons {
@@ -19,8 +21,11 @@
     .form__button {
       width: 180px;
       margin-right: 8px;
+      padding: 4px 8px;
+      @include mixins.form-colours-and-border;
 
       &:hover {
+        background-color: palette.$hover-background-colour;
         cursor: pointer;
       }
     }

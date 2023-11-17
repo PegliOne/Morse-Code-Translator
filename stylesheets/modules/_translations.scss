@@ -1,4 +1,5 @@
 @use "../partials/mixins";
+@use "../partials/palette";
 
 .main__translation {
   @include mixins.centred-column;
@@ -23,7 +24,7 @@
       }
 
       &--invalid {
-        color: red;
+        color: palette.$error-text-colour;
         font-weight: 500;
       }
     }

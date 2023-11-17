@@ -1,8 +1,11 @@
 @use "./modules/form";
 @use "./modules/translations";
+@use "./partials/palette";
 
 body {
   margin: 0 24px;
+  background-color: palette.$primary-background-colour;
+  color: palette.$primary-text-colour;
   text-align: center;
   font-size: 20px;
 }
