@@ -13,21 +13,22 @@
   background-color: rgb(246, 242, 229);
   color: rgb(61, 39, 5);
   border: 2px solid rgb(61, 39, 5);
-  border-radius: 8px;
+  border-radius: 12px;
 }
-.main__form .form__buttons {
+.main__form .form__button-container {
   margin-top: 24px;
 }
-.main__form .form__buttons .form__button {
-  width: 180px;
+.main__form .form__button-container .form__button {
   margin-right: 8px;
-  padding: 4px 8px;
+  padding: 8px 12px;
+  font-weight: 600;
+  text-transform: uppercase;
   background-color: rgb(246, 242, 229);
   color: rgb(61, 39, 5);
   border: 2px solid rgb(61, 39, 5);
-  border-radius: 8px;
+  border-radius: 12px;
 }
-.main__form .form__buttons .form__button:hover {
+.main__form .form__button-container .form__button:hover {
   background-color: rgb(241, 230, 191);
   cursor: pointer;
 }

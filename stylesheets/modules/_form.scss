@@ -15,13 +15,14 @@
     @include mixins.form-colours-and-border;
   }
 
-  .form__buttons {
+  .form__button-container {
     margin-top: 24px;
 
     .form__button {
-      width: 180px;
       margin-right: 8px;
-      padding: 4px 8px;
+      padding: 8px 12px;
+      font-weight: 600;
+      text-transform: uppercase;
       @include mixins.form-colours-and-border;
 
       &:hover {
