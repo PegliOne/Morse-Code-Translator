@@ -3,7 +3,7 @@
 @use "./partials/palette";
 
 body {
-  margin: 0 24px;
+  margin: 0 48px 24px;
   background-color: palette.$primary-background-colour;
   color: palette.$primary-text-colour;
   text-align: center;
