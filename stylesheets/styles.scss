@@ -1,16 +1,22 @@
 @use "./modules/form";
 @use "./modules/translations";
+@use "./partials/palette";
 
 body {
-  margin: 0 24px;
+  margin: 0 48px 24px;
+  background-color: palette.$primary-background-colour;
+  color: palette.$primary-text-colour;
   text-align: center;
   font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .header__heading {
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  letter-spacing: 0.1rem;
 }
 
 .main__para {
-  margin-bottom: 0;
+  margin: 36px 0 24px;
 }
